@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import CartButton from "./CartButton";
+import { HeaderProps } from "../interfaces/";
+
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -17,31 +19,27 @@ const LogoBox = styled.div`
 
 const MKS = styled.div`
     color: #fff;
-    font-family: Montserrat;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
-    line-height: 19px;
+    line-height: 14px;
 `;
 
 const Sistemas = styled.div`
     color: #fff;
-    font-family: Montserrat;
     font-size: 20px;
-    font-style: normal;
     font-weight: 300;
-    line-height: 19px;
     margin-left: 8px;
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ toggleCartVisibility }) => {
     return (
         <HeaderContainer>
             <LogoBox>
                 <MKS>MKS</MKS>
                 <Sistemas>Sistemas</Sistemas>
             </LogoBox>
-            <CartButton />
+            <CartButton onClick={toggleCartVisibility} />
         </HeaderContainer>
     );
 };

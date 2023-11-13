@@ -6,6 +6,11 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
   }
+  body {
+    font-family: 'Montserrat', sans-serif;  // Certifique-se de importar a fonte corretamente
+  }
+
+
 
 `;
 

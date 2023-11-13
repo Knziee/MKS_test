@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import Image from "next/image";
+import cartIcon from "../public/images/CartIcon.png";
+import { OnClick } from "../interfaces/";
 
 const Background = styled.div`
     display: flex;
@@ -13,30 +16,23 @@ const Background = styled.div`
     cursor: pointer;
 `;
 
-const Icon = styled.div`
-    display: flex;
-    /* width: 100%;
-    height: 300px;
-    img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-    } */
-`;
-
 const Items = styled.div`
-    font-family: Montserrat;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
 `;
 
-const CartButton: React.FC = () => {
+const Icon = styled.div`
+    margin-left: -15px;
+    margin-bottom: -5px;
+`;
+
+const CartButton: React.FC<OnClick> = ({ onClick }) => {
     return (
-        <Background>
+        <Background onClick={onClick}>
             <Icon>
-                <img src="../public/images/CartIcon.png" alt="Cart" />
-            </Icon>
+                <Image src={cartIcon} alt="Cart Icon" />
+            </Icon>{" "}
             <Items>0</Items>
         </Background>
     );
