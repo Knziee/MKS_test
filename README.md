@@ -2,7 +2,7 @@
     <tr>
      <td align="center" width="900px;">
        <h1 align="center" >MKS | DESAFIO FRONT-END</h1><BR>
-        <h1 align="bottom" ><a href="https://mks-test-five.vercel.app/" >:system: www.mkssistemas.com.br</h1><BR>
+        <h1 align="bottom" ><a href="https://mks-test-five.vercel.app/" > www.mkssistemas.com.br</h1><BR>
         <sub>
         </sub>
       </a>
