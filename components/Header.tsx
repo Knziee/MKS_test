@@ -2,7 +2,6 @@ import styled from "styled-components";
 import CartButton from "./CartButton";
 import { HeaderProps } from "../interfaces/";
 
-
 const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -15,12 +14,16 @@ const HeaderContainer = styled.div`
 const LogoBox = styled.div`
     display: flex;
     margin-left: 65px;
+    cursor: pointer;
+
+    @media (max-width: 490px) {
+        margin-left: 0;
+    }
 `;
 
 const MKS = styled.div`
     color: #fff;
     font-size: 40px;
-    font-style: normal;
     font-weight: 600;
     line-height: 14px;
 `;
@@ -32,16 +35,16 @@ const Sistemas = styled.div`
     margin-left: 8px;
 `;
 
-const Header: React.FC<HeaderProps> = ({ toggleCartVisibility }) => {
+function Header({ toggleCartVisibility }: HeaderProps) {
     return (
         <HeaderContainer>
             <LogoBox>
                 <MKS>MKS</MKS>
                 <Sistemas>Sistemas</Sistemas>
             </LogoBox>
-            <CartButton onClick={toggleCartVisibility} />
+            <CartButton openCart={toggleCartVisibility} />
         </HeaderContainer>
     );
-};
+}
 
 export default Header;

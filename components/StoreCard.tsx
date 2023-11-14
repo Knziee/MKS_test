@@ -1,11 +1,13 @@
-// components/Card.js
 import styled from "styled-components";
 import Image from "next/image";
-import cartIcon from "../public/images/CartIcon.png";
+import { StoreCardProps } from "../interfaces";
+import { useShoppingCart } from "../utils/providers/contextApi";
 import buyIcon from "../public/images/buyIcon.png";
 
 const CardContainer = styled.div`
     width: 218px;
+    min-height: 285px;
+    max-height: 285px;
     height: 285px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -38,7 +40,6 @@ const Price = styled.div`
     background: #373737;
     color: #fff;
     font-size: 15px;
-    font-style: normal;
     font-weight: 700;
     padding: 0px 7px 0px 7px;
     height: 28px;
@@ -48,20 +49,27 @@ const Title = styled.h2`
     color: #2c2c2c;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 19px;
     height: 39px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 `;
 
 const Subtitle = styled.p`
     color: #2c2c2c;
     font-size: 10px;
-    font-style: normal;
     font-weight: 300;
     line-height: 12px;
-    margin-top: 8px; /* Adicione a margem superior desejada */
+    margin-top: 8px;
     width: 180px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 `;
 
 const BuyButton = styled.div`
@@ -77,30 +85,76 @@ const BuyButton = styled.div`
     font-weight: 600;
     cursor: pointer;
     margin-top: auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra na parte inferior */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: #1b67da;
+    }
 `;
 
-const Card = () => {
+const StoreCard = ({
+    name,
+    brand,
+    description,
+    price,
+    photo,
+}: StoreCardProps) => {
+    const { dispatch, state } = useShoppingCart();
+    const cartItems = state.cartItems;
+
+    console.log(cartItems);
+
+    const existingItem = cartItems.find(
+        (item) => item.name === name && item.brand === brand
+    );
+
+    const addToCart = () => {
+        if (existingItem) {
+            dispatch({
+                type: "INCREASE_QUANTITY",
+                payload: {
+                    id: existingItem.id,
+                    quantity: existingItem.quantity + 1,
+                },
+            });
+        } else {
+            dispatch({
+                type: "ADD_TO_CART",
+                payload: {
+                    id: cartItems.length + 1,
+                    brand,
+                    name,
+                    price,
+                    description,
+                    photo,
+                    quantity: 1,
+                },
+            });
+        }
+    };
+
     return (
         <CardContainer>
             <Image
-                src={cartIcon}
+                src={photo}
                 alt={"title"}
                 height={138}
+                width={100}
                 style={{
                     marginTop: "18px",
+                    width: "auto",
+                    height: "auto",
+                    minHeight: "138px",
                 }}
             />
             <CardInfo>
                 <TitleAndPrice>
-                    <Title>{"Apple iPhoneX 128GB"}</Title>
-                    <Price>RS399</Price>
+                    <Title>{brand + " " + name}</Title>
+                    <Price>{price}</Price>
                 </TitleAndPrice>
-                <Subtitle>
-                    {"Redesigned from scratch and completely revised."}
-                </Subtitle>
+                <Subtitle>{description}</Subtitle>
             </CardInfo>
-            <BuyButton onClick={() => console.log("teste")}>
+            <BuyButton onClick={addToCart}>
                 <Image
                     src={buyIcon}
                     alt={"title"}
@@ -115,4 +169,4 @@ const Card = () => {
     );
 };
 
-export default Card;
+export default StoreCard;

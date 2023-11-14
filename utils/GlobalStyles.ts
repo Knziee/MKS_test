@@ -7,11 +7,8 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
   }
   body {
-    font-family: 'Montserrat', sans-serif;  // Certifique-se de importar a fonte corretamente
+    font-family: 'Montserrat'
   }
-
-
-
 `;
 
 export default GlobalStyles;

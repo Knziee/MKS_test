@@ -2,6 +2,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
-export const ReactQueryProvider: React.FC = ({ children }) => (
+export const ReactQueryProvider = ({
+    children,
+}: React.PropsWithChildren<{}>) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
