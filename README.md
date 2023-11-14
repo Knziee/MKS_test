@@ -1,47 +1,79 @@
-# TypeScript Next.js example
+<table align="center" >
+    <tr>
+     <td align="center" width="900px;">
+       <h1 align="center" >MKS | DESAFIO FRONT-END</h1><BR>
+        <h1 align="bottom" ><a href="https://mks-test-five.vercel.app/" >:system: www.mkssistemas.com.br</h1><BR>
+        <sub>
+        </sub>
+      </a>
+   
+</tr>
+<table/>
+ 
+ <br>
+ 
+## Requisitos:
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+Desenvolver uma aplicação de loja com uma lista de produtos e com um carrinho, consumindo uma API REST.     
 
-## Deploy your own
+Dentre os requisitos, estão utilizar as seguintes ferramentas:
+- React ou NextJS.
+- TypeScript.
+- React-query.
+- Styled-components.
+- Jest.
+       
+    
+### :boom: Demonstração em produção:
+<table align="center">
+  <tr>
+     <td align="center">
+  <img src="https://i.imgur.com/PJrLIbp.png" alt="imgur"/>
+        <sub>
+        </sub>
+      </a>
+   
+</tr>
+<table/>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+## 🛠 Tecnologias:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+As seguintes ferramentas foram usadas na construção do desafio:
+       
+- NextJS
+- React-query
+- Typescript
+- Styled-components
 
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
+## :package: Rodando a aplicação localmente:
 ```
-
-```bash
-yarn create next-app --example with-typescript with-typescript-app
+# Abra um terminal e clone este repositório 
+$ git clone https://github.com/Knziee/PDV-Fast-Food-Front-end.git
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd PDV-Fast-Food-Front-end
+# Instale as dependências
+$ npm install
+# Rode a aplicação
+$ npm run dev   
 ```
-
-```bash
-pnpm create next-app --example with-typescript with-typescript-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
-```
-npm install --save-dev typescript
-```
-
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
-
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+       
+## 🚀 Deploy da aplicação:
+ - <a href="https://mks-test-five.vercel.app/" > Via Vercel
+       
+       
+## 💻 Desenvolvido por:
+  
+<table align="left">
+  <tr>
+     <td align="center">
+      <a href="https://github.com/Knziee">
+        <img src="https://avatars.githubusercontent.com/u/89425394?s=96&v=4" width="80px;" alt="github"/><br>
+        <sub>
+          <b> Rhuan Martins Software Developer 👨‍💻</b>
+        </sub>
+      </a>       
+    </td>   
+                                                                                                              
+  </tr>
+</table>
+<br>
